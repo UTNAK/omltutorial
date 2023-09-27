@@ -22,29 +22,29 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
-      - uses: actions/checkout@v3
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout
+      uses: actions/checkout@v3
 
-      # Set up java environment
-      - name: Setup JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+    # Set up java environment
+    - name: Setup JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
 
-      # Set up Gradle
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+    # Set up Gradle
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
 
-      # Build
-      - name: Build
-        run: ./gradlew build
+    # Build
+    - name: Build
+      run: ./gradlew build
 
-      # Upload
-      - name: Upload
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: build/
+    # Upload
+    - name: Upload
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: build/
