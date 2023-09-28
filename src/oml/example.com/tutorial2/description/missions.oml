@@ -8,6 +8,7 @@ description <http://example.com/tutorial2/description/missions#> as missions {
 
 	extends <http://example.com/tutorial2/description/components#> as components
 
+
 	instance orbiter : mission:Mission [
 		base:hasIdentifier "M.01"
 		base:hasCanonicalName "Orbiter Mission"
@@ -36,5 +37,6 @@ description <http://example.com/tutorial2/description/missions#> as missions {
 		mission:deploys components:lander-spacecraft
 		mission:deploys components:lander-ground-data-system
 		mission:deploys components:mission-operations-system
-	]
+	]	
+	
 }
