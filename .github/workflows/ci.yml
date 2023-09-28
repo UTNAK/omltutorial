@@ -41,6 +41,10 @@ jobs:
     - name: Build
       run: ./gradlew build
 
+    # Query
+    - name: Query
+      run: ./gradlew owlQuery
+
     # Upload
     - name: Upload
       if: ${{ always() }}
